@@ -290,7 +290,7 @@ Key Normalization:
 ### Build Verification
 ```bash
 ✅ k6 v1.4.2 (go1.24.2, darwin/arm64)
-✅ Extensions: github.com/GhMartingit/xk6-mongo (devel), k6/x/mongo [js]
+✅ Extensions: github.com/daudcangerah/xk6-mongo (devel), k6/x/mongo [js]
 ```
 
 ### Example Scripts Tested
@@ -441,7 +441,7 @@ go tool cover -html=coverage.out
 go test -bench=. -benchmem ./...
 
 # Build k6
-xk6 build --with github.com/GhMartingit/xk6-mongo=.
+xk6 build --with github.com/daudcangerah/xk6-mongo=.
 
 # Test examples
 ./k6 run examples/test-insert.js

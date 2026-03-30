@@ -32,7 +32,7 @@ This project adheres to a code of conduct. By participating, you are expected to
    ```
 3. **Add upstream remote**:
    ```bash
-   git remote add upstream https://github.com/GhMartingit/xk6-mongo.git
+   git remote add upstream https://github.com/daudcangerah/xk6-mongo.git
    ```
 
 ## Development Setup
@@ -61,7 +61,7 @@ docker run -d --rm --name xk6-mongo-dev -p 27017:27017 mongo:7
 ```bash
 make build
 # or
-xk6 build --with github.com/GhMartingit/xk6-mongo=.
+xk6 build --with github.com/daudcangerah/xk6-mongo=.
 ```
 
 ## Making Changes

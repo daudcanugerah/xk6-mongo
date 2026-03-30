@@ -11,7 +11,7 @@ Build the k6 binary:
 
 ```bash
 make build
-# or: xk6 build --with github.com/GhMartingit/xk6-mongo
+# or: xk6 build --with github.com/daudcangerah/xk6-mongo
 ```
 
 Start MongoDB locally:

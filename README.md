@@ -31,7 +31,7 @@ To build a custom `k6` binary with this extension, first ensure you have the pre
 2. [Build the k6 binary](https://github.com/grafana/xk6#command-usage):
 
     ```bash
-    xk6 build --with  github.com/GhMartingit/xk6-mongo
+    xk6 build --with  github.com/daudcangerah/xk6-mongo
     ```
 
    This will create a k6 binary that includes the xk6-mongo extension in your local folder. This k6 binary can now run a k6 test.
@@ -41,7 +41,7 @@ To build a custom `k6` binary with this extension, first ensure you have the pre
 To make development a little smoother, use the `Makefile` in the root folder. The default target will format your code, run tests, and create a `k6` binary with your local code rather than from GitHub.
 
 ```shell
-git clone git@github.com/GhMartingit/xk6-mongo.git
+git clone git@github.com/daudcangerah/xk6-mongo.git
 cd xk6-mongo
 make build
 ```
@@ -372,8 +372,8 @@ This project is licensed under the same license as the k6 project.
 ## Support
 
 - 📖 [Documentation](README.md)
-- 🐛 [Issue Tracker](https://github.com/GhMartingit/xk6-mongo/issues)
-- 💬 [Discussions](https://github.com/GhMartingit/xk6-mongo/discussions)
+- 🐛 [Issue Tracker](https://github.com/daudcangerah/xk6-mongo/issues)
+- 💬 [Discussions](https://github.com/daudcangerah/xk6-mongo/discussions)
 - 📝 [Changelog](CHANGELOG.md)
 
 ## Acknowledgments
