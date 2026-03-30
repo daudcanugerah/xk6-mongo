@@ -44,8 +44,8 @@ type Session struct {
 }
 
 const (
-	defaultConnectionTimeout = 10 * time.Second
-	defaultOperationTimeout  = 30 * time.Second
+	defaultConnectionTimeout = 30 * time.Second
+	defaultOperationTimeout  = 15 * time.Minute
 )
 
 // NewClient represents the Client constructor (i.e. `new mongo.Client()`) and
