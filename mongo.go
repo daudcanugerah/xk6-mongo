@@ -5,6 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"log"
+	"go.k6.io/k6/js/common"
 	"strings"
 	"time"
 
@@ -321,15 +322,17 @@ func (c *Client) FindWithOptions(database string, collection string, filter any,
 	return results, nil
 }
 
-func (c *Client) Aggregate(database string, collection string, pipeline any) ([]bson.M, error) {
+func (c *Client) Aggregate(database string, collection string, pipeline any) []bson.M {
 	if pipeline == nil {
-		return nil, errPipelineNil
+		common.Throw(nil, errPipelineNil)
+		return nil // unreachable, but required
 	}
 
 	col, err := c.getCollection(database, collection)
 	if err != nil {
 		log.Printf(errValidatingCollection, err)
-		return nil, err
+		common.Throw(nil, err)
+		return nil
 	}
 
 	ctx, cancel := c.getContext()
@@ -338,16 +341,19 @@ func (c *Client) Aggregate(database string, collection string, pipeline any) ([]
 	cur, err := col.Aggregate(ctx, pipeline)
 	if err != nil {
 		log.Printf(errAggregating, err)
-		return nil, err
+		common.Throw(nil, err)
+		return nil
 	}
 	defer cur.Close(ctx)
 
 	var results []bson.M
 	if err = cur.All(ctx, &results); err != nil {
 		log.Printf(errDecodingDocuments, err)
-		return nil, err
+		common.Throw(nil, err)
+		return nil
 	}
-	return results, nil
+
+	return results
 }
 
 func (c *Client) FindOne(database string, collection string, filter any) (bson.M, error) {
